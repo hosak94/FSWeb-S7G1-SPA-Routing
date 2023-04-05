@@ -1,6 +1,6 @@
+/* eslint-disable react/jsx-pascal-case */
 import React from "react";
 import { Link } from "react-router-dom";
-
 export default function FilmListesi(props) {
   return (
     <div className="movie-list">

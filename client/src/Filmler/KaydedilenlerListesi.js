@@ -1,18 +1,21 @@
 import React from "react";
-import { useHistory } from "react-router-dom";
+import { useHistory } from "react-router";
 
 export default function KaydedilenlerListesi(props) {
   const history = useHistory();
-  const toHome = () => {
+  function handleClick() {
     history.push("/");
-  };
+  }
+
   return (
     <div className="saved-list">
       <h3>Kaydedilen Filmler:</h3>
-      {props.list.map((movie) => (
-        <span className="saved-movie">{movie.title}</span>
+      {props.list.map((movie, index) => (
+        <span className="saved-movie" key={index}>
+          {movie.title}
+        </span>
       ))}
-      <div onClick={() => toHome()} className="home-button">
+      <div className="home-button" onClick={handleClick}>
         Anasayfa
       </div>
     </div>
